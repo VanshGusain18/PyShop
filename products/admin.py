@@ -5,7 +5,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display=("name", "stock", "price")
 
 class OfferAdmin(admin.ModelAdmin):
-    list_display=("code", "description", "discount")
+    list_display=("code", "discount")
 
 admin.site.register(Products, ProductAdmin)
 admin.site.register(Offer, OfferAdmin)
