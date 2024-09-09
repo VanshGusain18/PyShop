@@ -1,7 +1,24 @@
-<h1>Products</h1>
-
-<ul>
-  {% for products in products %}
-  <li>{{products.name}}</li>
-  {% endfor %}
-</ul>
+{% extends 'base.html' %} {% block content %}
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> PyShop </a>
+  </div>
+</nav>
+<div class="container">
+  <h1>Products</h1>
+  <div class="row">
+    {% for products in products %}
+    <div class="card mx-3 my-3" style="width: 18rem">
+      <img src="{{products.image_url}}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{products.name}}</h5>
+        <p class="card-text">
+          Price -> {{products.price}} <br />stocks -> {{products.stock}}
+        </p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
